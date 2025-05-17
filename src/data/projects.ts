@@ -16,17 +16,18 @@ export const projects: Project[] = [
     description: 'Real-time AI disaster management platform that helps organizations coordinate responses during natural disasters using AI-powered recommendations.',
     image: 'https://i.postimg.cc/1X2zFjXT/so.jpg',
     techStack: ['React', 'Firebase', 'Gemini API', 'Tailwind CSS'],
-    githubUrl: 'https://github.com/rangasashank',
-    demoUrl: '#',
+    githubUrl: 'https://github.com/rangasashank/safeOrbit.ai',
+    demoUrl: 'https://devpost.com/software/safeorbit-ai',
     featured: true
   },
   {
     id: 'flatmate-flow',
     title: 'Flatmate Flow',
-    description: 'Comprehensive roommate management application for tracking expenses, chores, and house events with real-time updates and notifications.',
+    description: 'Comprehensive roommate management application for tracking expenses, chores, and house events with real-time updates.',
     image: 'https://i.postimg.cc/76Rtr3fD/ff.png',
     techStack: ['MongoDB', 'Express', 'React', 'Node.js', 'Redux', 'Framer Motion'],
-    githubUrl: 'https://github.com/rangasashank',
+    githubUrl: 'https://github.com/rangasashank/flatmateflow',
+    demoUrl: 'https://flatmateflow.netlify.app',
     featured: true
   },
   {
