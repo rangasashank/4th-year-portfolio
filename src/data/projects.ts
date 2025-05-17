@@ -46,7 +46,7 @@ export const projects: Project[] = [
     image: 'https://i.postimg.cc/Pxw0SV5Y/7Day.png',
     techStack: ['HTML', 'CSS', 'JavaScript', 'REST APIs'],
     githubUrl: 'https://github.com/rangasashank/7-Day-Weather',
-    demoUrl: '#',
+    demoUrl: 'https://webhome.csc.uvic.ca/~rangasashankgurram/project2.html',
     featured: true
   },
   {
