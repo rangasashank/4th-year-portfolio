@@ -36,7 +36,7 @@ export const projects: Project[] = [
     description: 'Command-line interface tool implementing Unix-like piping functionality using system calls like fork, exec, and pipe for process management.',
     image: 'https://images.pexels.com/photos/177598/pexels-photo-177598.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     techStack: ['C', 'System Calls', 'Linux'],
-    githubUrl: 'https://github.com/rangasashank',
+    githubUrl: 'https://github.com/rangasashank/Linux-Command-Piping',
     featured: true
   },
   {
