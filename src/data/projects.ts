@@ -45,7 +45,7 @@ export const projects: Project[] = [
     description: 'Interactive weather application that displays current conditions and 7-day forecasts using OpenWeather and OpenCage APIs with location auto-detection.',
     image: 'https://i.postimg.cc/Pxw0SV5Y/7Day.png',
     techStack: ['HTML', 'CSS', 'JavaScript', 'REST APIs'],
-    githubUrl: 'https://github.com/rangasashank',
+    githubUrl: 'https://github.com/rangasashank/7-Day-Weather',
     demoUrl: '#',
     featured: true
   },
