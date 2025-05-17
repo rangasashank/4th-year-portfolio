@@ -56,7 +56,7 @@ export const projects: Project[] = [
     image: 'https://i.postimg.cc/MTV1P12v/tesla.png',
     techStack: ['React', 'Material UI', 'Styled Components'],
     githubUrl: 'https://github.com/rangasashank/tesla-clone',
-    demoUrl: '#',
+    demoUrl: 'https://clone-tesla-ranga.netlify.app',
     featured: false
   },
   {
@@ -65,7 +65,7 @@ export const projects: Project[] = [
     description: 'Python script that sends automatic email birthday wishes by reading contacts from an Excel spreadsheet and using customizable templates.',
     image: 'https://images.pexels.com/photos/6963944/pexels-photo-6963944.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     techStack: ['Python', 'Excel', 'SMTP'],
-    githubUrl: 'https://github.com/rangasashank',
+    githubUrl: 'https://github.com/rangasashank/birthday_wisher',
     featured: false
   },
   {
@@ -74,7 +74,7 @@ export const projects: Project[] = [
     description: 'Text analysis tool that processes documents to generate word frequency reports and contextual word maps using regex pattern matching.',
     image: 'https://images.pexels.com/photos/590022/pexels-photo-590022.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     techStack: ['Python', 'C', 'RegEx'],
-    githubUrl: 'https://github.com/rangasashank',
+    githubUrl: 'https://github.com/rangasashank/concordance',
     featured: false
   }
 ];
