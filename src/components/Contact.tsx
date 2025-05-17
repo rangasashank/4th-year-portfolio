@@ -5,6 +5,8 @@ import GlassCard from './ui/GlassCard';
 import Button from './ui/Button';
 import SocialLinks from './ui/SocialLinks';
 import { useAnimateOnScroll } from '../hooks/useAnimateOnScroll';
+import emailjs from '@emailjs/browser';
+
 
 const Contact: React.FC = () => {
   const [ref, controls] = useAnimateOnScroll();
@@ -21,12 +23,30 @@ const Contact: React.FC = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // This would normally send the form, but we'll just alert for demo purposes
-    alert(`Thank you for your message! I'll get back to you soon.`);
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  try {
+    const result = await emailjs.send(
+      'service_5ldtpjj',      // service ID
+      'template_s9s5dp7',     // template ID
+      {
+        from_name: formState.name,
+        from_email: formState.email,
+        message: formState.message,
+      },
+      'p48LUJfEFDEs73Tw3' //public key      
+    );
+
+    alert('Thank you for your message! I\'ll get back to you soon.');
     setFormState({ name: '', email: '', message: '' });
-  };
+
+  } catch (error) {
+    console.error('EmailJS Error:', error);
+    alert('Oops! Something went wrong. Please try again later.');
+  }
+};
+
 
   return (
     <section id="contact" className="section-padding relative overflow-hidden">

@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
               <span className="text-primary-300">G.</span>Ranga Sashank
             </p>
             <p className="text-white text-opacity-80 mt-2">
-              Aspiring Software Developer | Full Stack | Problem Solver
+              CS@UVic | Aspiring Software Developer | Full Stack | Problem Solver
             </p>
           </div>
           

@@ -4,13 +4,21 @@ import GlassCard from './ui/GlassCard';
 import { skillCategories } from '../data/skills';
 import { useAnimateOnScroll } from '../hooks/useAnimateOnScroll';
 
+const barVariants = {
+  initial: { width: 0 },
+  animate: (level: number) => ({
+    width: `${level * 20}%`,
+    transition: { duration: 0.8, ease: 'easeOut' }
+  }),
+};
+
 const Skills: React.FC = () => {
   const [ref, controls] = useAnimateOnScroll();
-  
+
   return (
     <section id="skills" className="section-padding relative overflow-hidden">
       <div className="absolute inset-0 gradient-bg opacity-10" />
-      
+
       <div className="container mx-auto relative z-10">
         <motion.div
           ref={ref}
@@ -25,7 +33,7 @@ const Skills: React.FC = () => {
             Here are the technologies and tools I've worked with and mastered over time.
           </p>
         </motion.div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {skillCategories.map((category, index) => (
             <motion.div
@@ -36,7 +44,7 @@ const Skills: React.FC = () => {
             >
               <GlassCard className="h-full text-white">
                 <h3 className="text-xl font-bold mb-6 text-center">{category.name}</h3>
-                
+
                 <div className="space-y-6">
                   {category.skills.map((skill) => (
                     <div key={skill.name} className="space-y-2">
@@ -44,17 +52,16 @@ const Skills: React.FC = () => {
                         <span className="font-medium">{skill.name}</span>
                         <span className="text-xs">{getLevelLabel(skill.level)}</span>
                       </div>
-                      
+
                       <div className="h-2 bg-white bg-opacity-10 rounded-full overflow-hidden">
                         <motion.div
                           className="h-full rounded-full"
-                          style={{ 
-                            backgroundColor: skill.color || '#6366f1',
-                            width: `${skill.level * 20}%`
-                          }}
-                          initial={{ width: 0 }}
-                          animate={controls}
-                          transition={{ duration: 0.8, delay: 0.2 * index }}
+                          style={{ backgroundColor: skill.color || '#6366f1' }}
+                          variants={barVariants}
+                          initial="initial"
+                          whileInView="animate"
+                          viewport={{ once: true }}
+                          custom={skill.level}
                         />
                       </div>
                     </div>

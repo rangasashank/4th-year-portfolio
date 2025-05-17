@@ -12,7 +12,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: 'safeorbit',
-    title: 'SafeOrbit.ai',
+    title: 'SafeOrbit.ai (NwHacks 2025 Hackathon)',
     description: 'Real-time AI disaster management platform that helps organizations coordinate responses during natural disasters using AI-powered recommendations.',
     image: 'https://i.postimg.cc/1X2zFjXT/so.jpg',
     techStack: ['React', 'Firebase', 'Gemini API', 'Tailwind CSS'],
