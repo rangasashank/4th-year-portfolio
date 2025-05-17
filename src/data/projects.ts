@@ -55,7 +55,7 @@ export const projects: Project[] = [
     description: 'Fully-responsive frontend replica of the Tesla website with smooth animations and interactive elements mimicking the original site.',
     image: 'https://i.postimg.cc/MTV1P12v/tesla.png',
     techStack: ['React', 'Material UI', 'Styled Components'],
-    githubUrl: 'https://github.com/rangasashank',
+    githubUrl: 'https://github.com/rangasashank/tesla-clone',
     demoUrl: '#',
     featured: false
   },
