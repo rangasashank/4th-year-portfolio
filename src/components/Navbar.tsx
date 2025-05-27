@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
   }, []);
 
   const handleClick = () => {
-    window.open('https://drive.google.com/file/d/1QqMfk00VotM3CIY41H6eDkAviaZC0AZ7/view', '_blank')
+    window.open('https://drive.google.com/file/d/1U9pfp5l-CCtB3PfAe2UsMtIy52iNbFlw/view?usp=sharing', '_blank')
   };
 
   return (
