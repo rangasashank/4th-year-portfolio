@@ -7,11 +7,11 @@ import { useAnimateOnScroll } from '../hooks/useAnimateOnScroll';
 
 const About: React.FC = () => {
   const [ref, controls] = useAnimateOnScroll();
-  
+
   return (
     <section id="about" className="section-padding relative overflow-hidden">
       <div className="absolute inset-0 gradient-bg opacity-10" />
-      
+
       <div className="container mx-auto relative z-10">
         <motion.div
           ref={ref}
@@ -22,7 +22,7 @@ const About: React.FC = () => {
         >
           <h2 className="text-4xl font-bold text-gray-200 mb-2">About Me</h2>
           <div className="h-1 w-20 bg-primary-500 mx-auto mb-8" />
-          
+
           <GlassCard className="max-w-3xl mx-auto text-white">
             <p className="text-lg leading-relaxed">
               I'm a 4th year Computer Science student at the University of Victoria, specializing in Software Systems.
@@ -32,9 +32,9 @@ const About: React.FC = () => {
             </p>
           </GlassCard>
         </motion.div>
-        
+
         <div className="mt-16">
-          <motion.h3 
+          <motion.h3
             initial={{ opacity: 0 }}
             animate={controls}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -42,7 +42,7 @@ const About: React.FC = () => {
           >
             Education & Experience
           </motion.h3>
-          
+
           {/* Education */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -54,12 +54,12 @@ const About: React.FC = () => {
               <div className="flex-shrink-0 p-3 bg-primary-500 rounded-full">
                 <GraduationCap size={24} />
               </div>
-              
+
               <div>
                 <h4 className="text-xl font-semibold">B.Sc. in Computer Science, Software Systems</h4>
                 <p className="text-primary-200 mb-2 flex items-center gap-2">
                   <CalendarClock size={16} />
-                  <span>Expected June 2026</span>
+                  <span>Expected Sep 2026</span>
                 </p>
                 <h5 className="font-medium">University of Victoria</h5>
                 <p className="mt-3 text-white text-opacity-80">
@@ -69,7 +69,7 @@ const About: React.FC = () => {
               </div>
             </GlassCard>
           </motion.div>
-          
+
           {/* Work Experience */}
           <div className="space-y-6">
             {experiences.map((exp, index) => (
@@ -83,7 +83,7 @@ const About: React.FC = () => {
                   <div className="flex-shrink-0 p-3 bg-secondary-500 rounded-full">
                     <Briefcase size={24} />
                   </div>
-                  
+
                   <div>
                     <h4 className="text-xl font-semibold">{exp.role}</h4>
                     <p className="text-secondary-200 mb-2 flex items-center gap-2">
@@ -91,16 +91,16 @@ const About: React.FC = () => {
                       <span>{exp.period}</span>
                     </p>
                     <h5 className="font-medium">{exp.company} — {exp.location}</h5>
-                    
+
                     <ul className="mt-3 space-y-2 list-disc list-inside text-white text-opacity-80">
                       {exp.description.map((item, i) => (
                         <li key={i}>{item}</li>
                       ))}
                     </ul>
-                    
+
                     <div className="mt-4 flex flex-wrap gap-2">
                       {exp.technologies.map((tech, i) => (
-                        <span 
+                        <span
                           key={i}
                           className="px-3 py-1 bg-white bg-opacity-10 rounded-full text-sm"
                         >

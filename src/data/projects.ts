@@ -11,6 +11,24 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "cross-meeting-insights",
+    title: "Cross-Meeting Insights (Inspire Hackathon)",
+    description:
+      "AI-powered meeting memory and action engine for nonprofits. Automatically summarizes meetings, extracts tasks, identifies recurring issues across 50+ transcripts, and generates practical solutions with expected impact. Won the FundrAIse Winner award at Inspire Action 2025.",
+    image: "/cross-meeting-insights.png",
+    techStack: [
+      "Next.js",
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "OpenAI",
+      "Nylas Notetaker",
+    ],
+    githubUrl: "https://github.com/rangasashank/fundraise-hackathon-two",
+    demoUrl: "https://devpost.com/software/team-9-fundraise",
+    featured: true,
+  },
+  {
     id: "AI Blog App built with microservices",
     title: "AI Blog App with Microservices",
     description:

@@ -10,6 +10,35 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
+    id: 'meaningful',
+    role: 'Full-Stack Developer Co-op',
+    company: 'Meaningful',
+    period: 'Jan 2026 – Present',
+    location: 'Remote',
+    description: [
+      'Built real-time sync using SSE and webhooks, cutting UI latency by ~10s for 50+ active users.',
+      'Designed a media processing pipeline on AWS S3 with BullMQ, achieving 99% async task reliability.',
+      'Developed a scalable event management system with Stripe, simplifying registrations for non-profit associations.',
+      'Migrated legacy APIs to n8n workflows, reducing new-org onboarding effort by ~40%.',
+      'Owned end-to-end feature development, improving deployment speed by 30% with optimized MongoDB schemas.'
+    ],
+    technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'AWS S3', 'BullMQ', 'Stripe', 'SSE', 'n8n']
+  },
+  {
+    id: 'inspire',
+    role: 'Software Engineer Co-op',
+    company: 'Inspire – University of Victoria',
+    period: 'Sep 2025 – Dec 2025',
+    location: 'Victoria, BC',
+    description: [
+      'Built an AI-powered meeting dashboard in Meaningful CRM using Next.js, Express, and MongoDB with Nylas transcription.',
+      'Implemented OpenAI-based meeting summaries and prioritized action items from transcripts.',
+      'Created custom MCP servers in TypeScript to expose CRM data for context-aware email generation.',
+      'Shipped production features to AWS Elastic Beanstalk and collaborated directly with non-profit stakeholders.'
+    ],
+    technologies: ['Next.js', 'Express', 'MongoDB', 'OpenAI', 'Nylas', 'TypeScript', 'AWS Elastic Beanstalk', 'MCP']
+  },
+  {
     id: 'blastworks',
     role: 'QA Automation Engineer Co-op',
     company: 'Blastworks Inc.',
@@ -22,22 +51,5 @@ export const experiences: Experience[] = [
       'Optimized test coverage resulting in a 30% reduction in manual testing time'
     ],
     technologies: ['Python', 'Appium', 'AltTester', 'Jenkins', 'Jira', 'Mobile Testing']
-  },
-  {
-    id: 'uvic',
-    role: 'Digitization Assistant',
-    company: 'University of Victoria',
-    period: 'Nov 2024 – May 2025',
-    location: 'Victoria, BC',
-    description: [
-      'Issued official UVic transcripts and ensured timely, secure delivery in accordance with institutional protocols.',
-
-'Inputted and maintained student academic records in the university database, ensuring data integrity and accuracy.',
-
-'Handled sensitive student information in compliance with privacy regulations and UVic’s data governance policies.'
-
-
-    ],
-    technologies: ['Excel', 'Microsoft Tools', 'Communication']
   }
 ];

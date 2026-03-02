@@ -20,7 +20,7 @@ export const skillCategories: SkillCategory[] = [
       { name: 'Java', level: 2, color: '#A8B9CC' },
       { name: 'HTML', level: 4, color: '#E34F26' },
       { name: 'CSS', level: 3, color: '#1572B6' },
-      
+
     ]
   },
   {
@@ -36,7 +36,9 @@ export const skillCategories: SkillCategory[] = [
       { name: 'RabbitMQ', level: 3, color: '#FF6600' },
       { name: 'Tailwind CSS', level: 3, color: '#06B6D4' },
       { name: 'Material UI', level: 3, color: '#0081CB' },
-      { name: 'Styled Components', level: 3, color: '#DB7093' }
+      { name: 'Styled Components', level: 3, color: '#DB7093' },
+      { name: 'Stripe', level: 3, color: '#635BFF' },
+      { name: 'BullMQ', level: 3, color: '#E84D3D' }
     ]
   },
   {
@@ -45,10 +47,22 @@ export const skillCategories: SkillCategory[] = [
       { name: 'Git', level: 5, color: '#F05032' },
       { name: 'Docker', level: 3, color: '#2496ED' },
       { name: 'AWS EC2', level: 3, color: '#3178C6' },
+      { name: 'AWS S3', level: 3, color: '#569A31' },
+      { name: 'AWS Elastic Beanstalk', level: 3, color: '#FF9900' },
       { name: 'Azure DevOps', level: 3, color: '#0078D7' },
+      { name: 'n8n', level: 3, color: '#EA4B71' },
       { name: 'Postman', level: 5, color: '#FF6C37' },
       { name: 'Jira', level: 5, color: '#0052CC' },
       { name: 'Linux', level: 3, color: '#FCC624' }
+    ]
+  },
+  {
+    name: 'AI & APIs',
+    skills: [
+      { name: 'OpenAI', level: 4, color: '#412991' },
+      { name: 'Gemini API', level: 3, color: '#4285F4' },
+      { name: 'Nylas', level: 3, color: '#0068D6' },
+      { name: 'MCP', level: 3, color: '#10B981' }
     ]
   },
   {

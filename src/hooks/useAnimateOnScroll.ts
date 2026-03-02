@@ -12,5 +12,5 @@ export const useAnimateOnScroll = (threshold = 0.1) => {
     }
   }, [controls, inView]);
 
-  return [ref, controls];
+  return [ref, controls] as const;
 };
