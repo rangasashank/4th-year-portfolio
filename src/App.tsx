@@ -12,6 +12,7 @@ import {
   GitBranch,
   ShieldCheck,
 } from "lucide-react";
+import TypingRole from "./components/TypingRole";
 import { projects } from "./data/projects";
 import { experiences } from "./data/experience";
 
@@ -110,10 +111,7 @@ function App() {
               <span className="intro-line" />
               <div>
                 <p className="name">I’m Ranga Sashank Gurram.</p>
-                <h2>
-                  Forward Deployed Engineer
-                  <br />& Full Stack Developer.
-                </h2>
+                <TypingRole />
               </div>
             </div>
             <p className="hero-description">

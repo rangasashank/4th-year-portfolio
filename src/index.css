@@ -1197,3 +1197,56 @@ footer > div a {
     transform: none;
   }
 }
+
+.typing-role {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.typing-role h2 {
+  min-height: 3em;
+  width: 27ch;
+  max-width: 100%;
+}
+.hero-intro > div {
+  min-width: 0;
+}
+.typed-role {
+  color: var(--orange);
+}
+.typing-cursor {
+  margin-left: 2px;
+  font-weight: 400;
+  animation: cursor-blink 1s step-end infinite;
+}
+.typing-cursor.paused {
+  animation: none;
+}
+.typing-toggle {
+  display: inline-flex;
+  padding: 6px;
+  margin-top: 2px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.typing-toggle:hover {
+  color: var(--orange);
+  border-color: var(--orange);
+}
+@keyframes cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+/* Contain the larger diagonal reveals without introducing horizontal scroll. */
+main {
+  overflow: clip;
+}
+@media (prefers-reduced-motion: reduce) {
+  .typing-role h2 {
+    width: auto;
+  }
+}

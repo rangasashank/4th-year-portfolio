@@ -22,18 +22,51 @@ export function usePageMotion(expanded: boolean) {
             const element = target as HTMLElement;
             if (element.dataset.revealed) return;
             element.dataset.revealed = "true";
+            const isProject = element.matches(".project");
+            const isHeading = element.matches(
+              ".section-heading, .contact-section > h2",
+            );
+            const isRow = element.matches(".experience, .toolkit-row");
+            const siblings = Array.from(element.parentElement?.children ?? []);
+            const index = siblings.indexOf(element);
+            const offset = isProject
+              ? index % 2 === 0
+                ? -24
+                : 24
+              : isRow
+                ? -24
+                : 0;
             const animation = element.animate(
               [
-                { opacity: 0, transform: "translateY(22px)" },
-                { opacity: 1, transform: "translateY(0)" },
+                {
+                  opacity: 0,
+                  transform: `translate(${offset}px, ${isHeading ? 60 : 80}px) scale(${isProject ? 0.94 : 0.98})`,
+                  filter: "blur(5px)",
+                  clipPath: isHeading ? "inset(0 0 100% 0)" : "inset(0)",
+                },
+                {
+                  opacity: 1,
+                  transform: "translate(0, 0) scale(1)",
+                  filter: "blur(0)",
+                  clipPath: "inset(0)",
+                },
               ],
-              { duration: 650, easing: "cubic-bezier(.22,1,.36,1)" },
+              {
+                duration: isHeading ? 1100 : 1000,
+                delay: isProject
+                  ? (index % 2) * 140
+                  : isRow
+                    ? (index % 3) * 80
+                    : 0,
+                easing: "cubic-bezier(.16,1,.3,1)",
+                fill: "backwards",
+              },
             );
             animations.add(animation);
             animation.onfinish = () => animations.delete(animation);
           });
         },
-        { threshold: 0.08 },
+        { threshold: 0.12, rootMargin: "0px 0px -35px 0px" },
       );
       document
         .querySelectorAll<HTMLElement>(
