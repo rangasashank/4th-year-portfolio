@@ -11,8 +11,42 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "releasepilot",
+    title: "ReleasePilot",
+    description:
+      "A release-readiness platform that turns GitHub PRs, CI results, and runbooks into cited risk reports. A three-agent MCP workflow combines retrieval with deterministic GO / CAUTION / NO_GO guardrails, so failed required checks remain blockers.",
+    image: "",
+    techStack: [
+      "Next.js",
+      "FastAPI",
+      "PostgreSQL / pgvector",
+      "MCP",
+      "Redis",
+      "Docker",
+    ],
+    githubUrl: "https://github.com/rangasashank/ReleasePilot",
+    featured: true,
+  },
+  {
+    id: "keytrace",
+    title: "KeyTrace",
+    description:
+      "A security gateway for agent actions. Go enforces default-deny permissions, Rust verifies signed tokens, and Kafka streams access decisions into Iceberg tables backed by Parquet for SQL auditing. A focused local project with automated integration tests.",
+    image: "",
+    techStack: [
+      "Go",
+      "Rust",
+      "Apache Kafka",
+      "Apache Iceberg",
+      "Parquet",
+      "DuckDB",
+    ],
+    githubUrl: "https://github.com/rangasashank/KeyTrace",
+    featured: true,
+  },
+  {
     id: "cross-meeting-insights",
-    title: "Cross-Meeting Insights (Inspire Hackathon)",
+    title: "Cross-Meeting Insights",
     description:
       "AI-powered meeting memory and action engine for nonprofits. Automatically summarizes meetings, extracts tasks, identifies recurring issues across 50+ transcripts, and generates practical solutions with expected impact. Won the FundrAIse Winner award at Inspire Action 2025.",
     image: "/cross-meeting-insights.png",
@@ -30,9 +64,9 @@ export const projects: Project[] = [
   },
   {
     id: "AI Blog App built with microservices",
-    title: "AI Blog App with Microservices",
+    title: "AI Blog Platform",
     description:
-      "A sophisticated, production-grade blog application meticulously crafted with a microservices architecture. This project leverages cutting-edge technologies for scalability, performance, and developer experience, enhanced with AI-powered content assistance. It's a comprehensive demonstration of inter-service communication, robust caching, diverse data storage, secure authentication, and streamlined cloud deployment.",
+      "A full-stack publishing platform with AI-assisted writing, separate application services, message queues, caching, and Google authentication. Built to explore the tradeoffs of a distributed application across PostgreSQL, MongoDB, and Redis.",
     image: "https://i.postimg.cc/P5yy0Gpj/image.png",
     techStack: [
       "Next.js",
