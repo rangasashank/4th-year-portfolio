@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, type PointerEvent } from "react";
+import { usePageMotion } from "./hooks/usePageMotion";
 import {
   ArrowUpRight,
   ArrowDown,
@@ -36,12 +37,35 @@ const stack = [
   ],
 ];
 
+function tilt(event: PointerEvent<HTMLDivElement>) {
+  if (
+    event.pointerType !== "mouse" ||
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  )
+    return;
+  const rect = event.currentTarget.getBoundingClientRect();
+  event.currentTarget.style.setProperty(
+    "--tilt-x",
+    `${((event.clientY - rect.top) / rect.height - 0.5) * -5}deg`,
+  );
+  event.currentTarget.style.setProperty(
+    "--tilt-y",
+    `${((event.clientX - rect.left) / rect.width - 0.5) * 5}deg`,
+  );
+}
+function resetTilt(event: PointerEvent<HTMLDivElement>) {
+  event.currentTarget.style.setProperty("--tilt-x", "0deg");
+  event.currentTarget.style.setProperty("--tilt-y", "0deg");
+}
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showAll, setShowAll] = useState(false);
+  usePageMotion(showAll);
   const visibleProjects = showAll ? projects : projects.slice(0, 4);
   return (
     <>
+      <div className="scroll-progress" aria-hidden="true" />
       <a className="skip-link" href="#main">
         Skip to content
       </a>
@@ -106,7 +130,29 @@ function App() {
               </a>
             </div>
           </div>
-          <div className="portrait-block">
+          <div
+            className="portrait-block"
+            onPointerMove={tilt}
+            onPointerLeave={resetTilt}
+            onPointerCancel={resetTilt}
+          >
+            <svg
+              className="portrait-orbit"
+              viewBox="0 0 120 120"
+              fill="none"
+              aria-hidden="true"
+            >
+              <circle cx="60" cy="60" r="47" />
+              <ellipse
+                cx="60"
+                cy="60"
+                rx="22"
+                ry="47"
+                transform="rotate(35 60 60)"
+              />
+              <path d="M12 60h96M60 12v96" />
+              <circle className="orbit-point" cx="100" cy="35" r="5" />
+            </svg>
             <div className="portrait-frame">
               <img
                 src="/profile-pic.jpg"
@@ -151,7 +197,12 @@ function App() {
             <div className="project-grid">
               {visibleProjects.map((project, index) => (
                 <article className="project" key={project.id}>
-                  <div className={`project-visual visual-${project.id}`}>
+                  <div
+                    className={`project-visual visual-${project.id}`}
+                    onPointerMove={tilt}
+                    onPointerLeave={resetTilt}
+                    onPointerCancel={resetTilt}
+                  >
                     {project.id === "releasepilot" ? (
                       <div className="product-art">
                         <div className="art-top">

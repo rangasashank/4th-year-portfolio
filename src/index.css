@@ -957,3 +957,243 @@ footer > div a {
     transition: none !important;
   }
 }
+
+/* Motion stays decorative: content is readable before any animation runs. */
+.scroll-progress {
+  position: fixed;
+  inset: 0 0 auto;
+  height: 3px;
+  background: var(--orange);
+  transform: scaleX(var(--progress, 0));
+  transform-origin: left;
+  z-index: 100;
+  pointer-events: none;
+}
+.portrait-block {
+  position: relative;
+  perspective: 1000px;
+}
+.portrait-orbit {
+  position: absolute;
+  width: 112px;
+  height: 112px;
+  right: -30px;
+  top: -38px;
+  stroke: #899575;
+  stroke-width: 0.8;
+  z-index: 2;
+  pointer-events: none;
+  animation: orbit-arrive 2.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.orbit-point {
+  fill: var(--orange);
+  stroke: #f8f7f3;
+  stroke-width: 3;
+}
+.portrait-frame {
+  transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg))
+    rotate(2deg);
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+.project-visual {
+  perspective: 1000px;
+}
+.product-art {
+  transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg))
+    rotate(-2deg);
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+.key-art {
+  transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg))
+    rotate(2deg);
+}
+.navigation a {
+  position: relative;
+}
+.navigation a::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  background: var(--orange);
+  bottom: -7px;
+  left: 0;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.navigation a:focus-visible::after {
+  transform: scaleX(1);
+}
+.button svg,
+.text-link svg,
+.header-contact svg,
+.resume-links svg,
+.project-links svg,
+.contact-email svg {
+  transition: transform 0.25s ease;
+}
+.button:active {
+  transform: translateY(1px) scale(0.98);
+}
+.project-title h3 {
+  transition: color 0.25s ease;
+}
+.tags span {
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+.toolkit-row {
+  transition: border-color 0.3s ease;
+}
+.toolkit-row > span {
+  transition: color 0.25s ease;
+}
+.toolkit-row h3 {
+  transition: transform 0.3s ease;
+}
+.project:focus-within .project-title h3 {
+  color: var(--orange);
+}
+.contact-email:focus-visible svg,
+.text-link:focus-visible svg {
+  transform: translate(3px, -3px);
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .portrait-block:hover .portrait-frame {
+    box-shadow: 0 16px 30px #25272214;
+  }
+  .project:hover .product-art {
+    box-shadow: 0 15px 24px #263e1725;
+  }
+  .navigation a:hover::after {
+    transform: scaleX(1);
+  }
+  .button:hover svg {
+    transform: translateY(3px);
+  }
+  .text-link:hover svg,
+  .header-contact:hover svg,
+  .project-links a:hover svg,
+  .contact-email:hover svg {
+    transform: translate(3px, -3px);
+  }
+  .resume-links a:hover svg {
+    transform: translateY(3px);
+  }
+  .project:hover .project-title h3 {
+    color: var(--orange);
+  }
+  .tags span:hover {
+    background: #e0e5d7;
+    border-color: #879576;
+    color: #303b28;
+  }
+  .toolkit-row:hover {
+    border-color: #899575;
+  }
+  .toolkit-row:hover h3 {
+    transform: translateX(5px);
+  }
+  .toolkit-row:hover > span {
+    color: var(--orange);
+  }
+  .project:hover .pipeline > span {
+    animation: pipeline-step 0.85s ease both;
+  }
+  .project:hover .pipeline > span:nth-child(2) {
+    animation-delay: 0.15s;
+  }
+  .project:hover .pipeline > span:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  .project:hover .decision-icon {
+    animation: decision-pop 0.6s ease both;
+  }
+  .project:hover .trace-flow > span {
+    animation: trace-step 0.8s ease both;
+  }
+  .project:hover .trace-flow > span:nth-child(2) {
+    animation-delay: 0.12s;
+  }
+  .project:hover .trace-flow > span:nth-child(3) {
+    animation-delay: 0.24s;
+  }
+  .project:hover .trace-flow > span:nth-child(4) {
+    animation-delay: 0.36s;
+  }
+  .project:hover .trace-flow > span:nth-child(5) {
+    animation-delay: 0.48s;
+  }
+}
+@keyframes orbit-arrive {
+  from {
+    opacity: 0;
+    transform: rotate(-70deg) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+@keyframes pipeline-step {
+  45% {
+    background: #dce8c9;
+    border-color: #84976a;
+    transform: translateY(-3px);
+  }
+}
+@keyframes trace-step {
+  45% {
+    color: #c3d7a1;
+    transform: translateY(-3px);
+    text-shadow: 0 0 10px #c3d7a155;
+  }
+}
+@keyframes decision-pop {
+  50% {
+    transform: scale(1.12);
+    background: #ccddb5;
+  }
+}
+@media (max-width: 700px) {
+  .portrait-orbit {
+    width: 85px;
+    height: 85px;
+    right: -18px;
+    top: -28px;
+  }
+  .navigation.is-open {
+    animation: menu-arrive 0.2s ease;
+  }
+}
+@keyframes menu-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .portrait-frame {
+    transform: rotate(2deg);
+  }
+  .product-art {
+    transform: rotate(-2deg);
+  }
+  .key-art {
+    transform: rotate(2deg);
+  }
+  .button:active {
+    transform: none;
+  }
+}
