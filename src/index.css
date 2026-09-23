@@ -218,7 +218,6 @@ footer a:hover {
   height: 425px;
   object-fit: cover;
   object-position: center 35%;
-  filter: saturate(0.72);
 }
 .photo-index {
   display: block;
